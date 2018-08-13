@@ -3,7 +3,7 @@
 #Record the frame in which the first flash occurs, this is needed for later analysis.
 #Using imagej/fiji remove frames where the flash obscures the image.
 #Crop the video so that only the head remains/Find the region of interest (ROI) - leave room for the proboscis extension to be caught in the video
-#Record x, y coordinates of the center of the eye this will be needed to calcualte probocsis distance when entered into the program.
+#Record x, y coordinates of the centre of the eye this will be needed to calcualte probocsis distance when entered into the program.
 #Place file in same folder as running script 
 
 #Import Modules
@@ -33,7 +33,7 @@ while (True):
     blurred = cv2.erode(blurred, None, iterations =2)
     blurred = cv2.dilate(blurred, None, iterations =2)
 
-##Finding distance between center of the eye and the tip of the proboscis
+##Finding distance between centre of the eye and the tip of the proboscis
 #Finds contours of object in the video
     im, contours, hierarchy = cv2.findContours(blurred, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     count = contours[-1]
@@ -48,9 +48,9 @@ while (True):
     eye = tuple(eye)
     list(zip(bottommost,eye))  
     distance = sqrt((bottommost[0] - eye[0])**2 + (bottommost[1]-eye[1])**2) #finds the distance between the coordinates    
-    print distance 
+    print distance #Can also be altered to allow the data to be exported to an external file, instead of displaeyd in the running window.
 
-# Applies a circle to the lowest point of the proboscis so that when displayed the point being tracked can be observed.
+# Applies a circle to the lowest point of the proboscis and the centre of the eye so that when displayed the point being tracked can be observed.
     cv2.circle(frame, bottommost, 5, (255, 255, 0), -1)
     cv2.circle(frame, eye, 5, (255, 255, 0), -1)
 

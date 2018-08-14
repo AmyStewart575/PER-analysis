@@ -27,4 +27,5 @@ Maximal proboscis extension was obainned by finding the highest value (distance)
 Tremor can be observed by plotting the distance data obtainned against time to show tremor in terms of in and out movements. By appying a cubic spline to this data and analysis of the residuals, the R-squared value can be used as a measure of how well the data fits the spline applied, therefore the lower the value, the greater the variation from the spline and therefore the greater variation in proboscis movement, indicating the presence of tremor in proboscis extension.  
 
 Sample video 1 - represents a raw video without pre-processing having been conducted
+
 Sample video 2 - represents a pre-processed video for analysis using the programm written (eye coordinates - 57,156)

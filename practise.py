@@ -14,7 +14,7 @@ import time
 import imutils
 
 #Enter file name here.
-cap = cv2.VideoCapture('G2019SF20(3).avi') 
+cap = cv2.VideoCapture('Sample video 2.avi') 
 
 fgbg = cv2.createBackgroundSubtractorMOG2() #extracts the foreground from the background
 
@@ -44,7 +44,7 @@ while (True):
     bottommost = tuple(count[count[:, :, 1].argmax()][0])
 
 ###Determining distance proboscis has moved from eye center (pixels):
-    eye = [113,67] #enter coordinates of eye center here (x,y)
+    eye = [57,156] #enter coordinates of eye center here (x,y)
     eye = tuple(eye)
     list(zip(bottommost,eye))  
     distance = sqrt((bottommost[0] - eye[0])**2 + (bottommost[1]-eye[1])**2) #finds the distance between the coordinates    
